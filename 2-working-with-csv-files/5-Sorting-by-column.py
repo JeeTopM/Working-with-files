@@ -1,4 +1,4 @@
-'''
+"""
 Сортировка по столбцу
 
 Вам доступен файл deniro.csv, каждый столбец которого содержит либо только числа, либо строковые значения:
@@ -16,8 +16,20 @@ Raging Bull,1980,97
 
 Формат выходных данных
 Программа должна отсортировать содержимое файла deniro.csv по введенному столбцу и вывести полученный результат в исходном формате.
-'''
+"""
+
 import csv
 
-with open('/Users/lev/Documents/Programming/Python/Working-with-files/deniro', encoding='utf-8') as csv_file:
-    pass
+with open(
+    "/Users/lev/Documents/Programming/Python/Working-with-files/deniro.csv",
+    encoding="utf-8",
+) as csv_file:
+    
+    rows = csv.reader(csv_file)
+    list_film = []
+    for n in rows:
+        list_film.append([n[0], int(n[1]), int(n[2])])
+    inp = int(input())
+    sort_rows = sorted(list_film, key=lambda x: x[inp - 1])
+    for name, year, duration in sort_rows:
+        print(f'{name},{year},{duration}')
