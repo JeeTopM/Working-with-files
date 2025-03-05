@@ -17,5 +17,10 @@ name;old_price;new_price
 
 import csv
 
-with open('sales.csv', "w", encoding="utf-8") as csv_file:
-    pass
+with open('sales.csv', encoding="utf-8") as csv_file:
+    data = csv_file.read()
+    table = [r.split(';') for r in data.splitlines()]
+    del table[0]
+    for name, price_1, price_2 in table:
+        if int(price_2) < int(price_1):
+            print(name)
