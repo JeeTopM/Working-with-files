@@ -16,3 +16,5 @@ club3 = {"name": "FC Manchester United", "country": "England", "founded": 1878,
          "trainer": "Michael Carrick", "goalkeeper": "D. De Gea", "league_position": 8}
 
 # Дополнить?
+with open ('/Users/lev/Documents/Programming/Python/Working-with-files/data.json', 'w', encoding='utf-8') as clubs_js:
+    json.dump([club1, club2, club3], clubs_js, indent=3)
