@@ -11,11 +11,11 @@ import json
 
 
 def is_correct_json(string):
-    pass
-
-
-
-
+    try:
+        json.loads(string)
+        return "True"
+    except:
+        return "False"
 
 
 # test 1
