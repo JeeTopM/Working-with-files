@@ -6,8 +6,9 @@
 
 import json
 
-people = "/Users/lev/Documents/Programming/Python/people.json"
-with open(people, encoding="utf-8") as file, open('updated_people.json', 'w', encoding='utf-8') as merge:
+name = "people.json"
+link = "..." + name
+with open(link, encoding="utf-8") as file, open('updated_people.json', 'w', encoding='utf-8') as merge:
     rows = json.load(file)
     data = {}
     list_people = []
