@@ -10,7 +10,7 @@ religion — исповедуемая религия
 
 import json
 
-link = "/Users/lev/Documents/Programming/Python/countries.json"
+link = "countries.json"
 with open(link, encoding="utf-8") as js, open(
     "religion.json", "w", encoding="utf-8"
 ) as file:
