@@ -9,7 +9,8 @@
 """
 from zipfile import ZipFile
 
-link = "/Users/lev/Documents/Programming/Python/workbook.zip"
-with ZipFile(link) as zip_file:
-    # info = zip_file.namelist()
-    # zip_file.printdir()
+file_path = "/Users/lev/Documents/Programming/Python/workbook.zip"
+with ZipFile(file_path) as zip_file:
+    info = zip_file.infolist()
+    print(f'Объем исходных файлов: {sum(i.file_size for i in info)} байт(а)')
+    print(f'Объем сжатых файлов: {sum(i.compress_size for i in info)} байт(а)')
