@@ -5,7 +5,9 @@ h — натуральное число
 '''
 
 def triangle(h):
-    pass
+    if h > 0:
+        print('*' * h)
+        triangle(h - 1)
 
 # test
 triangle(3)
